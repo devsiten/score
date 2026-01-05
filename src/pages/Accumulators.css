@@ -1,0 +1,134 @@
+.accumulators-page {
+    padding-bottom: var(--space-3xl);
+}
+
+.acca-hero {
+    text-align: center;
+    padding: var(--space-2xl) 0 var(--space-xl);
+}
+
+.acca-hero h1 {
+    margin-bottom: var(--space-sm);
+}
+
+/* Explainer Section */
+.acca-explainer {
+    margin-bottom: var(--space-2xl);
+}
+
+.explainer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+}
+
+.explainer-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    text-align: center;
+    transition: all var(--transition-base);
+}
+
+.explainer-card:hover {
+    transform: translateY(-2px);
+}
+
+.explainer-card.safe {
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.explainer-card.standard {
+    border-color: rgba(245, 158, 11, 0.3);
+}
+
+.explainer-card.high {
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.explainer-card.score {
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.explainer-icon {
+    font-size: 2rem;
+    margin-bottom: var(--space-sm);
+}
+
+.explainer-card h4 {
+    margin-bottom: var(--space-xs);
+}
+
+.explainer-card p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Filter Tabs */
+.acca-filter-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xl);
+    padding: var(--space-xs);
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-subtle);
+}
+
+/* Acca Grid */
+.acca-list {
+    margin-bottom: var(--space-3xl);
+}
+
+.acca-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: var(--space-lg);
+}
+
+/* Tips Section */
+.tips-section {
+    margin-bottom: var(--space-3xl);
+}
+
+.tips-section h3 {
+    margin-bottom: var(--space-lg);
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-md);
+}
+
+.tip-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+}
+
+.tip-card h5 {
+    margin-bottom: var(--space-sm);
+    color: var(--accent-primary);
+}
+
+.tip-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .acca-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .acca-filter-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+}

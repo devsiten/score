@@ -1,0 +1,234 @@
+.acca-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: all var(--transition-base);
+    cursor: pointer;
+}
+
+.acca-card:hover {
+    border-color: var(--border-medium);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.acca-card.acca-success {
+    border-color: rgba(16, 185, 129, 0.2);
+}
+
+.acca-card.acca-success:hover {
+    border-color: rgba(16, 185, 129, 0.4);
+    box-shadow: var(--shadow-lg), 0 0 30px rgba(16, 185, 129, 0.1);
+}
+
+.acca-card.acca-warning {
+    border-color: rgba(245, 158, 11, 0.2);
+}
+
+.acca-card.acca-warning:hover {
+    border-color: rgba(245, 158, 11, 0.4);
+    box-shadow: var(--shadow-lg), 0 0 30px rgba(245, 158, 11, 0.1);
+}
+
+.acca-card.acca-danger {
+    border-color: rgba(239, 68, 68, 0.2);
+}
+
+.acca-card.acca-danger:hover {
+    border-color: rgba(239, 68, 68, 0.4);
+    box-shadow: var(--shadow-lg), 0 0 30px rgba(239, 68, 68, 0.1);
+}
+
+/* Header */
+.acca-header {
+    padding: var(--space-lg);
+    background: var(--glass);
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.acca-type {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.acca-type-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.acca-type-icon.safe {
+    background: rgba(16, 185, 129, 0.15);
+}
+
+.acca-type-icon.standard {
+    background: rgba(245, 158, 11, 0.15);
+}
+
+.acca-type-icon.high_odds {
+    background: rgba(239, 68, 68, 0.15);
+}
+
+.acca-type-icon.correct_score {
+    background: rgba(99, 102, 241, 0.15);
+}
+
+.acca-type-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.acca-type-label {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.acca-type-subtitle {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Stats */
+.acca-stats {
+    text-align: right;
+}
+
+.acca-odds {
+    font-family: var(--font-mono);
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.acca-success-rate {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Picks */
+.acca-picks {
+    padding: var(--space-md) var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.acca-pick {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.acca-pick:last-child {
+    border-bottom: none;
+}
+
+.acca-pick-check {
+    width: 22px;
+    height: 22px;
+    border-radius: var(--radius-full);
+    background: var(--gradient-high);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.acca-pick-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.acca-pick-match {
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.acca-pick-prediction {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.acca-pick-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.acca-pick-odds {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--accent-warning);
+}
+
+.acca-pick-2up {
+    font-size: 0.9rem;
+}
+
+/* Footer */
+.acca-footer {
+    padding: var(--space-md) var(--space-lg);
+    background: var(--glass);
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.acca-picks-count {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.acca-view-btn {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--accent-primary);
+    transition: color var(--transition-fast);
+}
+
+.acca-card:hover .acca-view-btn {
+    color: var(--text-primary);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .acca-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-md);
+    }
+
+    .acca-stats {
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: var(--space-md);
+    }
+
+    .acca-odds {
+        font-size: 1.5rem;
+    }
+}

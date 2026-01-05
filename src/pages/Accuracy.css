@@ -1,0 +1,319 @@
+.accuracy-page {
+    padding-bottom: var(--space-3xl);
+}
+
+.accuracy-hero {
+    text-align: center;
+    padding: var(--space-2xl) 0 var(--space-xl);
+}
+
+.accuracy-hero h1 {
+    margin-bottom: var(--space-sm);
+}
+
+/* Period Selector */
+.period-selector {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-2xl);
+    padding: var(--space-xs);
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-subtle);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.period-btn {
+    flex: 1;
+    padding: var(--space-sm) var(--space-md);
+    font-weight: 500;
+    color: var(--text-secondary);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.period-btn:hover {
+    color: var(--text-primary);
+}
+
+.period-btn.active {
+    background: var(--gradient-premium);
+    color: white;
+}
+
+/* Overall Stats */
+.overall-stats {
+    margin-bottom: var(--space-3xl);
+}
+
+.stat-card.featured {
+    grid-column: span 2;
+    background: var(--glass);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.stat-card.featured .stat-value {
+    font-size: 4rem;
+}
+
+.stat-detail {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: var(--space-xs);
+}
+
+/* Breakdown Sections */
+.breakdown-section {
+    margin-bottom: var(--space-3xl);
+}
+
+.breakdown-section h2 {
+    margin-bottom: var(--space-xs);
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    margin-bottom: var(--space-xl);
+}
+
+/* Confidence Breakdown */
+.confidence-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.confidence-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 150px;
+    gap: var(--space-md);
+    align-items: center;
+    padding: var(--space-md);
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
+}
+
+.confidence-range {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.confidence-bar-container {
+    height: 12px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.confidence-bar {
+    height: 100%;
+    border-radius: var(--radius-full);
+    transition: width 1s ease-out;
+}
+
+.confidence-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accuracy-value {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent-success);
+}
+
+.accuracy-count {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Market Grid */
+.market-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+}
+
+.market-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+}
+
+.market-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md);
+}
+
+.market-name {
+    font-weight: 600;
+}
+
+.market-accuracy {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+}
+
+.market-accuracy.good {
+    color: var(--accent-success);
+}
+
+.market-bar-container {
+    height: 8px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-sm);
+    overflow: hidden;
+}
+
+.market-bar {
+    height: 100%;
+    background: var(--gradient-premium);
+    border-radius: var(--radius-full);
+}
+
+.market-count {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Recent Results */
+.recent-section {
+    margin-bottom: var(--space-3xl);
+}
+
+.recent-results {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.result-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-lg);
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
+}
+
+.result-row.won {
+    border-left: 3px solid var(--accent-success);
+}
+
+.result-row.lost {
+    border-left: 3px solid var(--accent-danger);
+}
+
+.result-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.result-row.won .result-icon {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--accent-success);
+}
+
+.result-row.lost .result-icon {
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--accent-danger);
+}
+
+.result-info {
+    flex: 1;
+}
+
+.result-match {
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.result-prediction {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.result-confidence {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+/* Methodology */
+.methodology-section {
+    margin-bottom: var(--space-3xl);
+}
+
+.methodology-section h2 {
+    margin-bottom: var(--space-xl);
+}
+
+.methodology-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+}
+
+.method-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    text-align: center;
+}
+
+.method-icon {
+    font-size: 2rem;
+    margin-bottom: var(--space-md);
+}
+
+.method-card h4 {
+    margin-bottom: var(--space-sm);
+}
+
+.method-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stat-card.featured {
+        grid-column: span 1;
+    }
+
+    .stat-card.featured .stat-value {
+        font-size: 3rem;
+    }
+
+    .confidence-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+    }
+
+    .confidence-stats {
+        justify-content: flex-start;
+        gap: var(--space-md);
+    }
+}

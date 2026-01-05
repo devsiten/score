@@ -1,0 +1,60 @@
+.confidence-meter {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confidence-ring {
+    transform: rotate(-90deg);
+}
+
+.confidence-ring-bg {
+    fill: none;
+    stroke: var(--border-subtle);
+}
+
+.confidence-ring-fill {
+    fill: none;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.confidence-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-mono);
+    font-weight: 600;
+}
+
+.confidence-value.high {
+    color: var(--accent-success);
+}
+
+.confidence-value.mid {
+    color: var(--accent-warning);
+}
+
+.confidence-value.low {
+    color: var(--accent-primary);
+}
+
+/* Size variants */
+.confidence-meter.size-sm .confidence-value {
+    font-size: 0.85rem;
+}
+
+.confidence-meter.size-md .confidence-value {
+    font-size: 1.1rem;
+}
+
+.confidence-meter.size-lg .confidence-value {
+    font-size: 1.4rem;
+}
+
+/* Glow effect on high confidence */
+.confidence-ring-fill.high {
+    filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.4));
+}

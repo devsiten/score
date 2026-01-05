@@ -1,0 +1,48 @@
+.navbar-logo-icon {
+    font-size: 1.5rem;
+}
+
+.live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    padding: 6px 12px;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    color: var(--accent-success);
+    font-weight: 500;
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-success);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+@media (max-width: 768px) {
+    .navbar-content {
+        padding: 0 var(--space-md);
+    }
+
+    .navbar-logo-icon {
+        font-size: 1.2rem;
+    }
+
+    .navbar-logo {
+        font-size: 1.2rem;
+    }
+
+    .live-indicator span:last-child {
+        display: none;
+    }
+}

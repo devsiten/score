@@ -1,0 +1,212 @@
+.prediction-card {
+    cursor: pointer;
+}
+
+.prediction-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-lg);
+}
+
+.prediction-league {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.league-name {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.match-time {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent-success);
+    background: rgba(16, 185, 129, 0.1);
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+}
+
+.prediction-badges {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+/* Teams section */
+.prediction-teams {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-lg);
+    padding: var(--space-md) 0;
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    flex: 1;
+}
+
+.team-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--bg-tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.team-logo-placeholder {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.team-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-align: center;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.team-form {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+}
+
+.vs-badge {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    background: var(--bg-tertiary);
+    padding: 6px 12px;
+    border-radius: var(--radius-full);
+    letter-spacing: 1px;
+}
+
+/* Prediction content */
+.prediction-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--glass);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md) var(--space-lg);
+    margin-bottom: var(--space-md);
+}
+
+.prediction-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.prediction-market {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.prediction-pick {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.prediction-odds {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.odds-value {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    color: var(--accent-warning);
+}
+
+/* Factors */
+.prediction-factors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.factor-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+}
+
+.factor-pill.positive {
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.factor-pill.positive .factor-impact {
+    color: var(--accent-success);
+}
+
+.factor-pill.negative {
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.factor-pill.negative .factor-impact {
+    color: var(--accent-danger);
+}
+
+.factor-name {
+    color: var(--text-secondary);
+}
+
+.factor-impact {
+    font-family: var(--font-mono);
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .team-name {
+        font-size: 0.85rem;
+        max-width: 90px;
+    }
+
+    .team-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .prediction-content {
+        flex-direction: column;
+        gap: var(--space-md);
+        text-align: center;
+    }
+
+    .prediction-info {
+        align-items: center;
+    }
+}
