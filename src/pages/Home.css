@@ -45,6 +45,17 @@
     margin-bottom: var(--space-3xl);
 }
 
+/* Events Section */
+.events-section {
+    margin-bottom: var(--space-3xl);
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-lg);
+}
+
 .filter-tabs {
     display: flex;
     flex-wrap: wrap;
