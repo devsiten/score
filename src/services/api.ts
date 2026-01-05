@@ -1,4 +1,4 @@
-import { MatchPrediction, Accumulator, AccuracyStats, DailyPredictionsResponse } from '../types';
+import type { MatchPrediction, Accumulator, AccuracyStats, DailyPredictionsResponse } from '../types';
 
 const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8787';
 
