@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Accumulators from './pages/Accumulators';
 import Accuracy from './pages/Accuracy';
 import './index.css';
+import './App.css';
 
 function App() {
   return (
