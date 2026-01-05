@@ -19,22 +19,20 @@ function App() {
         </main>
         <footer className="footer">
           <div className="container">
-            <div className="footer-content">
+            <div className="footer-top">
               <div className="footer-brand">
                 <span className="footer-logo">ScorePredict</span>
                 <p className="footer-tagline">Data-driven football predictions</p>
               </div>
-              <div className="footer-links">
-                <a href="#methodology">Methodology</a>
-                <a href="#disclaimer">Disclaimer</a>
-                <a href="#contact">Contact</a>
-              </div>
-              <div className="footer-disclaimer">
-                <p>Predictions are for informational purposes only. Please bet responsibly.</p>
-              </div>
+              <nav className="footer-nav">
+                <a href="/accuracy">Track Record</a>
+                <a href="/accumulators">Accumulators</a>
+              </nav>
             </div>
+            <div className="footer-divider"></div>
             <div className="footer-bottom">
-              <p>© 2026 ScorePredict. All rights reserved.</p>
+              <p className="footer-copyright">2026 ScorePredict. All rights reserved.</p>
+              <p className="footer-disclaimer">Predictions are for informational purposes only. Please bet responsibly.</p>
             </div>
           </div>
         </footer>

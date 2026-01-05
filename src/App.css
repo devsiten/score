@@ -3,82 +3,96 @@
   margin-top: auto;
   background: var(--bg-secondary);
   border-top: 1px solid var(--border-subtle);
-  padding: var(--space-2xl) 0 var(--space-lg);
+  padding: var(--space-xl) 0;
 }
 
-.footer-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: var(--space-xl);
-  margin-bottom: var(--space-xl);
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
 }
 
 .footer-brand {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: 4px;
 }
 
 .footer-logo {
   font-family: var(--font-display);
   font-size: 1.3rem;
   font-weight: 700;
+  background: var(--gradient-premium);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .footer-tagline {
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
-.footer-links {
+.footer-nav {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
+  gap: var(--space-lg);
 }
 
-.footer-links a {
+.footer-nav a {
   color: var(--text-secondary);
   font-size: 0.9rem;
   transition: color var(--transition-fast);
 }
 
-.footer-links a:hover {
+.footer-nav a:hover {
   color: var(--text-primary);
 }
 
-.footer-disclaimer {
-  text-align: right;
-}
-
-.footer-disclaimer p {
-  color: var(--text-muted);
-  font-size: 0.85rem;
+.footer-divider {
+  height: 1px;
+  background: var(--border-subtle);
+  margin-bottom: var(--space-lg);
 }
 
 .footer-bottom {
-  padding-top: var(--space-lg);
-  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-md);
 }
 
-.footer-bottom p {
+.footer-copyright {
   color: var(--text-muted);
   font-size: 0.8rem;
-  text-align: center;
+}
+
+.footer-disclaimer {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  max-width: 400px;
+  text-align: right;
 }
 
 @media (max-width: 768px) {
-  .footer-content {
-    grid-template-columns: 1fr;
-    text-align: center;
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
   }
-
-  .footer-links {
-    flex-direction: row;
-    justify-content: center;
-    gap: var(--space-lg);
+  
+  .footer-nav {
+    gap: var(--space-md);
   }
-
+  
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
   .footer-disclaimer {
-    text-align: center;
+    text-align: left;
+    max-width: 100%;
   }
 }
