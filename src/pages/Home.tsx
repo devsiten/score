@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import PredictionCard from '../components/predictions/PredictionCard';
 import AccumulatorCard from '../components/predictions/AccumulatorCard';
 import type { MatchPrediction, Accumulator } from '../types';
+import { fetchTodaysPredictions, fetchAccumulators } from '../services/api';
 import './Home.css';
 
 export default function Home() {
@@ -11,13 +12,23 @@ export default function Home() {
     const [activeFilter, setActiveFilter] = useState<string>('all');
 
     useEffect(() => {
-        // API will be connected here
-        // For now, show empty state after loading
-        setTimeout(() => {
-            setPredictions([]);
-            setAccumulators([]);
-            setLoading(false);
-        }, 1000);
+        async function loadData() {
+            try {
+                const [predData, accaData] = await Promise.all([
+                    fetchTodaysPredictions(),
+                    fetchAccumulators()
+                ]);
+                setPredictions(predData.predictions || []);
+                setAccumulators(accaData || []);
+            } catch (error) {
+                console.error('Failed to load predictions:', error);
+                setPredictions([]);
+                setAccumulators([]);
+            } finally {
+                setLoading(false);
+            }
+        }
+        loadData();
     }, []);
 
     const filteredPredictions = activeFilter === 'all'
@@ -138,7 +149,7 @@ export default function Home() {
                     {loading ? (
                         <div className="loading-state">
                             <div className="loader"></div>
-                            <p>Analyzing matches...</p>
+                            <p>Loading predictions...</p>
                         </div>
                     ) : filteredPredictions.length > 0 ? (
                         <div className="predictions-grid">

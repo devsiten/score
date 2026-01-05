@@ -1,6 +1,6 @@
 import type { MatchPrediction, Accumulator, AccuracyStats, DailyPredictionsResponse } from '../types';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8787';
+const API_BASE = 'https://score-predict-api.devsiten.workers.dev';
 
 // Fetch today's predictions
 export async function fetchTodaysPredictions(): Promise<DailyPredictionsResponse> {
