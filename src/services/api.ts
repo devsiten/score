@@ -1,4 +1,4 @@
-import type { MatchPrediction, Accumulator, AccuracyStats, DailyPredictionsResponse } from '../types';
+import type { Accumulator, AccuracyStats, DailyPredictionsResponse } from '../types';
 
 const API_BASE = 'https://score-predict-api.devsiten.workers.dev';
 
@@ -75,6 +75,7 @@ export async function fetchTodaysPredictions(): Promise<DailyPredictionsResponse
             totalAnalyzed: 0,
             publishedCount: 0,
             predictions: [],
+            accumulators: [],
         };
     }
 }
@@ -127,4 +128,36 @@ export function getMarketDisplayName(market: string): string {
         'btts_no': 'Clean Sheet',
     };
     return names[market] || market;
+}
+
+export function getPredictionDisplay(prediction: string, homeTeam: string, awayTeam: string): string {
+    const displays: Record<string, string> = {
+        'home_win': `${homeTeam} Win`,
+        'away_win': `${awayTeam} Win`,
+        'draw': 'Draw',
+        'over_2.5': 'Over 2.5 Goals',
+        'under_2.5': 'Under 2.5 Goals',
+        'btts_yes': 'Both Teams to Score',
+        'btts_no': 'No BTTS',
+    };
+    return displays[prediction] || prediction;
+}
+
+export function getTimeUntilMatch(kickoff: Date): string {
+    const now = new Date();
+    const diff = kickoff.getTime() - now.getTime();
+
+    if (diff < 0) return 'Started';
+
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+    if (hours > 24) {
+        const days = Math.floor(hours / 24);
+        return `${days}d ${hours % 24}h`;
+    }
+    if (hours > 0) {
+        return `${hours}h ${minutes}m`;
+    }
+    return `${minutes}m`;
 }
