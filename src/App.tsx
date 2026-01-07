@@ -98,7 +98,7 @@ function App() {
             <h2 className="league-title">{league}</h2>
             <div className="matches-grid">
               {data.byLeague[league]?.map(match => (
-                <div key={match.id} className={`match-card ${match.isDerby ? 'derby' : ''} ${match.recommendation.confidence >= 70 ? 'recommended' : ''}`}>
+                <div key={match.id} className={`match-card ${match.isDerby ? 'derby' : ''} ${match.recommendation.confidence >= 50 ? 'recommended' : ''}`}>
                   <div className="card-top">
                     <span className="time">{formatDate(match.kickoff)} • {formatTime(match.kickoff)}</span>
                     {match.isDerby && <span className="badge derby-badge">DERBY</span>}
@@ -150,7 +150,7 @@ function App() {
                     </div>
                   </div>
 
-                  {match.recommendation.team && match.recommendation.confidence >= 70 && (
+                  {match.recommendation.team && match.recommendation.confidence >= 50 && (
                     <div className="recommendation">
                       <span className="rec-team">{match.recommendation.team}</span>
                       <span className={`rec-market ${match.recommendation.market?.toLowerCase()}`}>{match.recommendation.market}</span>
