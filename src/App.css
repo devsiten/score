@@ -1,4 +1,4 @@
-/* 1UP/2UP Dashboard - Grouped by League */
+/* 1UP/2UP Dashboard - Enhanced with H2H, Form & Injuries */
 
 :root {
   --bg: #0a0a0f;
@@ -11,6 +11,10 @@
   --medium: #f59e0b;
   --low: #666;
   --border: rgba(255, 255, 255, 0.08);
+  --win: #22c55e;
+  --draw: #6366f1;
+  --loss: #ef4444;
+  --injury: #ef4444;
 }
 
 * {
@@ -133,7 +137,7 @@ body {
 /* Matches Grid */
 .matches-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 1rem;
 }
 
@@ -171,6 +175,11 @@ body {
   color: var(--text-dim);
 }
 
+.badges-row {
+  display: flex;
+  gap: 0.35rem;
+}
+
 .badge {
   padding: 0.15rem 0.4rem;
   border-radius: 4px;
@@ -183,13 +192,18 @@ body {
   color: var(--medium);
 }
 
+.injury-badge {
+  background: rgba(239, 68, 68, 0.2);
+  color: var(--injury);
+}
+
 /* Teams */
 .teams {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   font-size: 0.95rem;
 }
 
@@ -205,9 +219,129 @@ body {
   text-align: left;
 }
 
+.team.has-injury {
+  position: relative;
+}
+
+.team.has-injury::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--injury);
+  opacity: 0.6;
+  border-radius: 1px;
+}
+
 .vs {
   color: var(--text-dim);
   font-size: 0.75rem;
+}
+
+/* H2H Display */
+.h2h-display {
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+}
+
+.h2h-title {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  margin-bottom: 0.4rem;
+  text-align: center;
+}
+
+.h2h-bar {
+  display: flex;
+  height: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.3rem;
+}
+
+.h2h-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #fff;
+  min-width: 10%;
+  transition: all 0.3s;
+}
+
+.h2h-segment.home {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.h2h-segment.draw {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+}
+
+.h2h-segment.away {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.h2h-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  color: var(--text-dim);
+}
+
+/* Form Display */
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.form-display {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.form-label {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  font-weight: 600;
+  min-width: 14px;
+}
+
+.form-badges {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.form-badge {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.form-badge.w {
+  background: var(--win);
+}
+
+.form-badge.d {
+  background: var(--draw);
+}
+
+.form-badge.l {
+  background: var(--loss);
 }
 
 /* Stats Table */
@@ -298,6 +432,7 @@ body {
   background: rgba(34, 197, 94, 0.1);
   border: 1px solid rgba(34, 197, 94, 0.3);
   border-radius: 6px;
+  margin-bottom: 0.5rem;
 }
 
 .rec-team {
@@ -312,12 +447,12 @@ body {
   font-weight: 700;
 }
 
-.rec-market.1up {
+.rec-market.one-up {
   background: linear-gradient(135deg, #3b82f6, #0ea5e9);
   color: #fff;
 }
 
-.rec-market.2up {
+.rec-market.two-up {
   background: linear-gradient(135deg, #8b5cf6, #ec4899);
   color: #fff;
 }
@@ -326,6 +461,22 @@ body {
   margin-left: auto;
   font-weight: 700;
   color: var(--high);
+}
+
+/* Reasons */
+.reasons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.reason-tag {
+  padding: 0.2rem 0.4rem;
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 4px;
+  font-size: 0.65rem;
+  color: var(--accent);
 }
 
 /* Footer */
@@ -354,5 +505,14 @@ body {
 
   .scores-row {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .h2h-segment {
+    font-size: 0.55rem;
   }
 }
