@@ -42,7 +42,9 @@ export default function EventCard({ event }: EventCardProps) {
             {event.tags && event.tags.length > 0 && (
                 <div className="event-tags">
                     {event.tags.slice(0, 3).map((tag, index) => (
-                        <span key={index} className="event-tag">{tag}</span>
+                        <span key={index} className="event-tag">
+                            {typeof tag === 'string' ? tag : tag.label || tag.slug || ''}
+                        </span>
                     ))}
                 </div>
             )}

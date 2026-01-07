@@ -21,7 +21,7 @@ export interface PolymarketEvent {
     title: string;
     description: string;
     category: string;
-    tags: string[];
+    tags: (string | { id: string; label: string; slug: string;[key: string]: unknown })[];
     startDate: string;
     endDate: string;
     isLive: boolean;
